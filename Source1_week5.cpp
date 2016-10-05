@@ -128,7 +128,10 @@ void draw()
 
 	// drawing outer circle from base class
 	GeometricObjects::draw_red_circle(100, 360, 50, 2);
-	drawLine(75, 325, 125, 375, 0.0f, 0.0f, 1.0f);
+
+	for(int i=0;i<4;i++)  // drawing thick line
+	drawLine(75-1, 325+i, 125-i, 375, 0.0f, 0.0f, 1.0f);
+	//drawLine(74, 326, 124, 375, 0.0f, 0.0f, 1.0f);
 }
 
 
@@ -286,44 +289,9 @@ void draw()
 			pixels[(i + width *j) * 3 + 2] = 1.0f;
 		}
 
-
+	//single loop for all the objects in child classes.
 	for (int i = 0; i<5; i++)
 		my_objects[i]->draw();
-
-
-
-	//const int i_center = 50, j_center = 50;
-	//const int thickness = 5;
-
-	//for (int j = j_center - thickness; j < j_center + thickness; j++)
-	//	for (int i = i_center - thickness; i < i_center + thickness; i++)
-	//	{
-	//		drawonepixel(i, j, 1.0f, 0.0f, 0.0f);
-
-	//	}
-
-	//drawonepixel(10, 10, 600, 300, 0.0f);
-
-	//// drawing a line
-	//// drawing a line
-	////TODO: anti-aliasing
-	/*const int i0 = 30, i1 = 200;
-	const int j0 = 400, j1 = 480;
-	drawLine(i0, j0, i1, j1, 1.0f, 0.0f, 0.0f);*/
-
-
-
-
-	//	//drawrectangle(1.0f, 0.0f, 0.0f);
-	//
-	//	drawtriangle(1.0f, 0.0f, 1.0f);
-	//
-	//	drawpentagon(1.0f, 0.0f, 1.0f);
-	//
-	//	drawcircle(150, 50, 40, 1, 1.0f, 0.0f, 0.0f);
-	//
-	//drawcircle(150, 50, 20, 1, 1.0f, 0.0f, 0.0f);
-
 }
 
 int main(void) {
