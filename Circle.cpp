@@ -6,7 +6,7 @@
 void Circle::draw() {
 
 	// draw this circle using center_x, center_y, radius_
-	GeometricObjects::drawredcircle();
+	////GeometricObjects::drawredcircle();
 	std::cout << "this is a child class circle" << std::endl;
 	drawcircle(50, 50, 40, 20, 1.0f, 0.0f, 0.0f);
 }

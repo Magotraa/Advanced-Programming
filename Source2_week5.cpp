@@ -7,6 +7,9 @@
 
 #include "Circle.h"
 #include "Box.h"
+#include "Line.h"
+#include "Triangle.h"
+#include "Polygon.h"
 
 
 
@@ -21,12 +24,15 @@ double win_x, win_y;
 
 
 
+
+
+GeometricObjects  **my_objects = new GeometricObjects*[6];
+
+
 void draw()
 {
-
-
 	//white background(1.0,1.0,1.0)
-
+	//let assign all pixels red color
 
 	for (int j = 0; j < height; j++)
 		for (int i = 0; i < width; i++)
@@ -34,15 +40,12 @@ void draw()
 			pixels[(i + width *j) * 3 + 0] = 1.0f;
 			pixels[(i + width *j) * 3 + 1] = 1.0f;
 			pixels[(i + width *j) * 3 + 2] = 1.0f;
-
 		}
+
+	//single loop for all the objects in child classes.
+	for (int i = 0; i<5; i++)
+		my_objects[i]->draw();
 }
-
-
-
-GeometricObjects  **my_objects = new GeometricObjects*[6];
-
-
 
 	int main(void) {
 
