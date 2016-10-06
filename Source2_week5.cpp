@@ -102,7 +102,7 @@ void draw()
 
 			draw();
 
-
+			
 
 			glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 			/* Swap front and back buffers */
