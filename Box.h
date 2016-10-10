@@ -5,7 +5,7 @@
 
 
 
-class Box : public GeometricObjects
+class Box : public Geometricobjects
 {
 
 public:

@@ -1,11 +1,11 @@
 #include "Box.h"
-
+#include "Geometricobjects.h"
 
 void Box::draw()  // declaration  - definition (header , body)
 {
   //
-	GeometricObjects::draw_red_circle(350, 350, 50, 2);
-	GeometricObjects::draw_red_circle(550, 350, 50, 2);
+	Geometricobjects::draw_red_circle(350, 350, 50, 2);
+	Geometricobjects::draw_red_circle(550, 350, 50, 2);
 
 	//
 	std::cout << "  This is a child class  Box" << std::endl;
@@ -22,7 +22,7 @@ void Box::draw()  // declaration  - definition (header , body)
 	for (int j = j_center - thickness; j < j_center + thickness; j++)
 		for (int i = i_center - thickness; i < i_center + thickness; i++)
 		{
-			drawonepixel(i, j, 0.0f, 1.0f, 0.0f);
+			Geometricobjects::drawonepixel(i, j, 0.0f, 1.0f, 0.0f);
 
 		}
 
@@ -41,15 +41,15 @@ void Box::drawrectangle(const float& red, const float& green, const float& blue)
 	for (int i = 230; i <= 300; i++)
 	{
 		int j = 460, x = 360;
-		drawonepixel(i, j, red, green, blue);
-		drawonepixel(i, x, red, green, blue);
+		Geometricobjects::drawonepixel(i, j, red, green, blue);
+		Geometricobjects::drawonepixel(i, x, red, green, blue);
 	}
 
 	for (int j = 360; j <= 460; j++)
 	{
 		int i = 230, y = 300;
-		drawonepixel(i, j, red, green, blue);
-		drawonepixel(y, j, red, green, blue);
+		Geometricobjects::drawonepixel(i, j, red, green, blue);
+		Geometricobjects::drawonepixel(y, j, red, green, blue);
 	}
 
 
@@ -59,7 +59,7 @@ void Box::drawrectangle(const float& red, const float& green, const float& blue)
 
 		for (int j = 360; j <= 460; j++)
 		{
-			drawonepixel(i, j, red, green, blue);
+			Geometricobjects::drawonepixel(i, j, red, green, blue);
 			//drawonepixel(i, x, red, green, blue);
 		}
 	}

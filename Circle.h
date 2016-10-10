@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include "GeometricObjects.h"
+#include "Geometricobjects.h"
 
-class Circle  : public GeometricObjects
+class Circle  : public Geometricobjects
 {
 public:
 	int center_x_, center_y_, radius_;

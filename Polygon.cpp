@@ -1,6 +1,6 @@
 #include "Polygon.h"
 #include "Geometricobjects.h"
-#include "Line.h""
+#include "Line.h"
 
 
 
@@ -8,7 +8,7 @@
 void Polygon::draw()
 {
 	// drawing outer circle from base class
-	GeometricObjects::draw_red_circle(312, 125, 50, 2);
+	Geometricobjects::draw_red_circle(312, 125, 50, 2);
 
 	drawpentagon(0.0f, 0.0f, 1.0f);
 }

@@ -4,7 +4,7 @@
 
 
 
-class Line : public GeometricObjects
+class Line : public Geometricobjects
 {
 
 public:

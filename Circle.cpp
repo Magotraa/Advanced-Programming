@@ -29,7 +29,7 @@ for (int x = _center_x - radius; x < _center_x + radius; x++) {
 				float distance = distanceFrom(x, y, _center_x, _center_y);
 				if (distance < radius && distance > radius - thickness)
 				{
-					drawonepixel(x, y, red, green, blue);
+					Geometricobjects::drawonepixel(x, y, red, green, blue);
 				}
 			}
 		

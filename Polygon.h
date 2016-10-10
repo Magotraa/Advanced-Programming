@@ -2,7 +2,7 @@
 
 #include "Geometricobjects.h"
 
-class Polygon : public GeometricObjects
+class Polygon :public Geometricobjects
 {
 public:
 	void draw();

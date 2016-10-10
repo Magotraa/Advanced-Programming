@@ -5,11 +5,7 @@
 #include <vector>
 #include "Geometricobjects.h"
 
-#include "Circle.h"
-#include "Box.h"
-#include "Line.h"
-#include "Triangle.h"
-#include "Polygon.h"
+
 
 
 
@@ -26,8 +22,9 @@ double win_x, win_y;
 
 
 
-GeometricObjects  **my_objects = new GeometricObjects*[6];
+Geometricobjects  **my_objects = new Geometricobjects*[6];
 
+std::vector<Geometricobjects*> go_vector;
 
 void draw()
 {
@@ -42,32 +39,30 @@ void draw()
 			pixels[(i + width *j) * 3 + 2] = 1.0f;
 		}
 
+
+	for (auto itr : go_vector)
+	(itr)->draw();
+
+
 	//single loop for all the objects in child classes.
-	for (int i = 0; i<5; i++)
-		my_objects[i]->draw();
+	/*for (int i = 0; i<5; i++)
+		my_objects[i]->draw();*/
 }
 
 	int main(void) {
+		go_vector.push_back(
+			Geometricobjects::createGeometricObjects(std::string("Circle")));
+		go_vector.push_back(
+			Geometricobjects::createGeometricObjects(std::string("Line")));
+		go_vector.push_back(
+			Geometricobjects::createGeometricObjects(std::string("Triangle")));
+		go_vector.push_back(
+			Geometricobjects::createGeometricObjects(std::string("Box")));
+		go_vector.push_back(
+			Geometricobjects::createGeometricObjects(std::string("Polygon")));
 
 
-		my_objects[0] = new Line();
-		my_objects[1] = new Circle();
-		my_objects[2] = new Box();
-		my_objects[3] = new Triangle();
-		my_objects[4] = new Polygon();
 
-
-
-
-		/*std::vector<GeometricObjects*> go_vector;
-
-		go_vector.push_back(new Circle);
-		go_vector.push_back(new Box);*/
-
-		// triangles, polygons, diamond, rohmbus.......
-
-		/*for (auto itr : go_vector)
-			(itr)->draw();*/
 
 
 

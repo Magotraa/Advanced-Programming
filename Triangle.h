@@ -5,7 +5,7 @@
 
 
 
-class Triangle : public GeometricObjects
+class Triangle : public Geometricobjects
 {
 public:
 	void draw();

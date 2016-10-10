@@ -10,7 +10,7 @@ void Triangle::draw()
 
 
 	// drawing outer circle from base class
-	GeometricObjects::draw_red_circle(100, 125, 50, 2);
+	Geometricobjects::draw_red_circle(100, 125, 50, 2);
 
 	drawtriangle(0.0f, 0.0f, 1.0f);
 }

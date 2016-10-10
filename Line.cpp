@@ -9,7 +9,7 @@ void Line::draw()
 	//drawLine(start_x_, start_y_, end_x_, end_y_, 0.0f, 1.0f, 0.0f);
 
 	// drawing outer circle from base class
-	GeometricObjects::draw_red_circle(100, 360, 50, 2);
+	Geometricobjects::draw_red_circle(100, 360, 50, 2);
 
 	for (int i = 0; i<4; i++)  // drawing thick line
 		drawLine(75 - 1, 325 + i, 125 - i, 375, 0.0f, 0.0f, 1.0f);
