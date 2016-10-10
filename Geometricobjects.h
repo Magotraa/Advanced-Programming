@@ -1,4 +1,9 @@
 #pragma once
+
+//#ifndef GEOMETRIOBJECTS_H
+//#define GEOMETRIOBJECTS_H
+
+
 #include <iostream>
 
 
@@ -11,11 +16,9 @@ const int height = 480;
 const int num_lines = 3;
 // color = (Red, Green, Blue)
 
-namespace
-{
-	 float* pixels = new float[width * height * 3];
-}
 
+
+extern float* pixels;
 
 //interface  
 class Geometricobjects {
@@ -31,3 +34,6 @@ public:
 	static Geometricobjects* createGeometricObjects(std::string& name);
 	
 };
+
+
+//#endif //GEOMETRIOBJECTS_H

@@ -38,30 +38,18 @@ void Box::draw()  // declaration  - definition (header , body)
 void Box::drawrectangle(const float& red, const float& green, const float& blue)
 {
 
-	for (int i = 230; i <= 300; i++)
+	for (int i = 325; i <= 375; i++)
 	{
-		int j = 460, x = 360;
-		Geometricobjects::drawonepixel(i, j, red, green, blue);
-		Geometricobjects::drawonepixel(i, x, red, green, blue);
+		int j = 375, x = 325;
+		drawonepixel(i, j, red, green, blue);
+		drawonepixel(i, x, red, green, blue);
 	}
 
-	for (int j = 360; j <= 460; j++)
+	for (int j = 325; j <= 375; j++)
 	{
-		int i = 230, y = 300;
-		Geometricobjects::drawonepixel(i, j, red, green, blue);
-		Geometricobjects::drawonepixel(y, j, red, green, blue);
-	}
-
-
-	for (int i = 330; i <= 390; i++)
-	{
-		int j = 460, x = 360;
-
-		for (int j = 360; j <= 460; j++)
-		{
-			Geometricobjects::drawonepixel(i, j, red, green, blue);
-			//drawonepixel(i, x, red, green, blue);
-		}
+		int i = 325, y = 375;
+		drawonepixel(i, j, red, green, blue);
+		drawonepixel(y, j, red, green, blue);
 	}
 
 

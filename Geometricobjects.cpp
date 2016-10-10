@@ -14,19 +14,7 @@ void Geometricobjects::draw() {
 
 
 	std::cout << "  This is a Mother class circle" << std::endl;
-	//for (int i = 230; i <= 300; i++)
-	//{
-	//	int j = 460, x = 360;
-	//	Geometricobjects::drawonepixel(i, j, 1, 0, 0);
-	//	Geometricobjects::drawonepixel(i, x, 1, 0, 0);
-	//}
 
-	//for (int j = 360; j <= 460; j++)
-	//{
-	//	int i = 230, y = 300;
-	//	Geometricobjects::drawonepixel(i, j, 1, 0, 0);
-	//	Geometricobjects::drawonepixel(y, j, 1, 0, 0);
-	//}
 }
 
 

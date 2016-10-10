@@ -1,10 +1,7 @@
-#define SQR(a) (a)*(a)
 
 
-//#include <iostream>
 #include <vector>
 #include "Geometricobjects.h"
-
 #include <GLFW\glfw3.h>
 #include <stdbool.h>
 #include <math.h>
@@ -13,10 +10,7 @@
 GLFWwindow* window;
 double win_x, win_y;
 
-
-
-
-Geometricobjects  **my_objects = new Geometricobjects*[6];
+float* pixels = new float[width * height * 3];
 
 std::vector<Geometricobjects*> go_vector;
 
@@ -24,7 +18,6 @@ void draw()
 {
 	//white background(1.0,1.0,1.0)
 	//let assign all pixels red color
-
 	for (int j = 0; j < height; j++)
 		for (int i = 0; i < width; i++)
 		{
@@ -36,11 +29,6 @@ void draw()
 
 	for (auto itr : go_vector)
 	(itr)->draw();
-
-
-	//single loop for all the objects in child classes.
-	/*for (int i = 0; i<5; i++)
-		my_objects[i]->draw();*/
 }
 
 	int main(void) {
@@ -54,11 +42,6 @@ void draw()
 			Geometricobjects::createGeometricObjects(std::string("Box")));
 		go_vector.push_back(
 			Geometricobjects::createGeometricObjects(std::string("Polygon")));
-
-
-
-
-
 
 		GLFWwindow* window;
 
@@ -74,10 +57,6 @@ void draw()
 			return -1;
 		}
 
-
-
-
-
 		/* Make the window's context current */
 		glfwMakeContextCurrent(window);
 
@@ -89,9 +68,7 @@ void draw()
 
 			glfwGetCursorPos(window, &win_x, &win_y);
 
-			draw();
-
-			
+			draw();			
 
 			glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 			/* Swap front and back buffers */
