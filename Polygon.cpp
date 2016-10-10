@@ -7,6 +7,8 @@
 
 void Polygon::draw()
 {
+
+	std::cout << "this is a child class pentagon" << std::endl;
 	// drawing outer circle from base class
 	Geometricobjects::draw_red_circle(312, 125, 50, 2);
 

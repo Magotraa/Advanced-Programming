@@ -30,7 +30,7 @@ void Line::drawLine(const int& i0, const int& j0, const int& i1, const int& j1, 
 		{
 			const int j = (j1 - j0)*(i - i0) / (i1 - i0) + j0;
 
-			drawonepixel(i, j, red, green, blue);
+			Geometricobjects::drawonepixel(i, j, red, green, blue);
 		}
 	}
 	else if (i0 > i1)
@@ -39,7 +39,7 @@ void Line::drawLine(const int& i0, const int& j0, const int& i1, const int& j1, 
 		{
 			const int j = (j1 - j0)*(i - i0) / (i1 - i0) + j0;
 
-			drawonepixel(i, j, red, green, blue);
+			Geometricobjects::drawonepixel(i, j, red, green, blue);
 		}
 	}
 	else
@@ -48,19 +48,19 @@ void Line::drawLine(const int& i0, const int& j0, const int& i1, const int& j1, 
 		{
 			for (int j = j0; j < j1; j++)
 			{
-				drawonepixel(i0, j, red, green, blue);
+				Geometricobjects::drawonepixel(i0, j, red, green, blue);
 			}
 		}
 		else if (j0 > j1)
 		{
 			for (int j = j1; j < j0; j++)
 			{
-				drawonepixel(i0, j, red, green, blue);
+				Geometricobjects::drawonepixel(i0, j, red, green, blue);
 			}
 		}
 		else
 		{
-			drawonepixel(i0, j0, red, green, blue);
+			Geometricobjects::drawonepixel(i0, j0, red, green, blue);
 		}
 	}
 

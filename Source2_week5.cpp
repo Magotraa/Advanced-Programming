@@ -5,11 +5,6 @@
 #include <vector>
 #include "Geometricobjects.h"
 
-
-
-
-
-
 #include <GLFW\glfw3.h>
 #include <stdbool.h>
 #include <math.h>
@@ -17,7 +12,6 @@
 
 GLFWwindow* window;
 double win_x, win_y;
-
 
 
 

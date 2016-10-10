@@ -7,7 +7,7 @@
 
 void Triangle::draw()
 {
-
+	std::cout << "this is a child class Triangle" << std::endl;
 
 	// drawing outer circle from base class
 	Geometricobjects::draw_red_circle(100, 125, 50, 2);
