@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include <iostream>
+#include <vector>
 
 GLFWwindow* window;
 double win_x, win_y;
@@ -22,8 +23,6 @@ float* pixels = new float[width * height * 3];
 
 //std::vector<Geometricobjects*> go_vector;
 //std::vector<GeometricObjectInterface*> obj_list;
-
-GeometricObjectInterface  **my_objects = new GeometricObjectInterface*[6];
 //obj_list = nullptr;
 
 
@@ -157,12 +156,15 @@ class Circle // NO PARENT (2pts)
 public:
 	// some variables
 	void draw()
+
 	{
 		// draw circle here
 
 		drawcircle(550, 125, 30, 2, 0.0f, 1.0f, 0.0f);
 	}
 };
+
+
 class GeometricObjectInterface
 {
 public:
@@ -171,6 +173,8 @@ public:
 	virtual void draw() = 0;
 };
 
+
+std::vector<GeometricObjectInterface*> obj_list;
 
 
 
@@ -204,13 +208,9 @@ void draw()
 			pixels[(i + width *j) * 3 + 2] = 1.0f;
 		}
 
-/*
-	for (auto itr : obj_list)
-		(itr)->draw();*/
 
-		//single loop for all the objects in child classes.
-	for (int i = 0; i<2; i++)
-		my_objects[i]->draw();
+	for (auto itr : obj_list)
+		(itr)->draw();
 }
 
 
@@ -220,13 +220,8 @@ int main()
 {
 
 	//std::vector<GeometricObjectInterface*> obj_list;
-	/*obj_list.push_back(new GeometricObject<Box>);
-	obj_list.push_back(new GeometricObject<Circle>);*/
-
-
-	my_objects[0] = new Circle();
-	my_objects[1] = new Box();
-
+	obj_list.push_back(new GeometricObject<Box>);
+	obj_list.push_back(new GeometricObject<Circle>);
 	
 	
 	
