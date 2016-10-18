@@ -157,7 +157,10 @@ void drawrectangle(const int& x_, const int& y_, const float& red, const float& 
 }
 
 
-class Box // NO PARENT (2pts)
+
+//using previous code for inner objects only
+
+class Box 
 {
 public:
 	// some variables
@@ -174,7 +177,7 @@ public:
 
 
 
-class Circle // NO PARENT (2pts)
+class Circle 
 {
 public:
 	// some variables
@@ -191,7 +194,6 @@ public:
 class GeometricObjectInterface
 {
 public:
-	// implement here
 
 	virtual void draw() = 0;
 };
@@ -203,7 +205,7 @@ std::vector<GeometricObjectInterface*> obj_list;
 
 
 
-// And implement an templatized GeometricObject class. (3pts)
+
 
 template<class T_operation>
 class GeometricObject_inner_objects : public GeometricObjectInterface
