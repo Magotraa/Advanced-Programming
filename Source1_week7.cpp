@@ -206,7 +206,7 @@ std::vector<GeometricObjectInterface*> obj_list;
 // And implement an templatized GeometricObject class. (3pts)
 
 template<class T_operation>
-class GeometricObject : public GeometricObjectInterface
+class GeometricObject_inner_objects : public GeometricObjectInterface
 {
 
 public:
@@ -224,7 +224,7 @@ public:
 
 
 //class to draw  for outer circle and box
-class GeometricObject_
+class GeometricObject_Outer_objects
 {
 
 public:
@@ -232,7 +232,7 @@ public:
 
 
 	/*void draw() {};*/
-void (GeometricObject_::*draw_surrounding_object_callback)(void) = nullptr;
+void (GeometricObject_Outer_objects::*draw_surrounding_object_callback)(void) = nullptr;
 	
 void exe() {
 
@@ -256,14 +256,14 @@ void drawBox() {
 	drawrectangle(-10, -10, 1.0f, 0.0f, 0.0f);
 }
 
-static GeometricObject_* getpointer(const std::string type_name)
+static GeometricObject_Outer_objects * getpointer(const std::string type_name)
 {
-	auto new_ob = new GeometricObject_;
+	auto new_ob = new GeometricObject_Outer_objects;
 
 	if (type_name == "Box")
-		new_ob->draw_surrounding_object_callback = &GeometricObject_::drawBox;
+		new_ob->draw_surrounding_object_callback = &GeometricObject_Outer_objects::drawBox;
 	else if (type_name == "Circle")
-		new_ob->draw_surrounding_object_callback = &GeometricObject_::drawCircle;
+		new_ob->draw_surrounding_object_callback = &GeometricObject_Outer_objects::drawCircle;
 
 	return new_ob;
 
@@ -272,7 +272,7 @@ static GeometricObject_* getpointer(const std::string type_name)
 };
 
 
-std::vector<GeometricObject_*> obj_list_;
+std::vector<GeometricObject_Outer_objects*> obj_list_;
 
 
 void draw()
@@ -305,8 +305,8 @@ int main()
 	//code to outer  outer circle and box 
 	{
 		//std::vector<GeometricObject_*> obj_list_;
-		obj_list_.push_back(GeometricObject_::getpointer("Box"));
-		obj_list_.push_back(GeometricObject_::getpointer("Circle"));
+		obj_list_.push_back(GeometricObject_Outer_objects::getpointer("Box"));
+		obj_list_.push_back(GeometricObject_Outer_objects::getpointer("Circle"));
 
 	}
 
@@ -314,8 +314,8 @@ int main()
 	//code for inner objects
 	{
 		//std::vector<GeometricObjectInterface*> obj_list;
-		obj_list.push_back(new GeometricObject<Box>);
-		obj_list.push_back(new GeometricObject<Circle>);
+		obj_list.push_back(new GeometricObject_inner_objects<Box>);
+		obj_list.push_back(new GeometricObject_inner_objects<Circle>);
 	}
 
 
