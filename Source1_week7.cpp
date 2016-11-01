@@ -9,7 +9,8 @@
 #include <math.h>
 #include <iostream>
 #include <vector>
-#include <stdio.h>
+#include <stdio.h> 
+
 #include <stdlib.h>
 
 GLFWwindow* window;
@@ -239,7 +240,7 @@ void (GeometricObject_Outer_objects::*draw_surrounding_object_callback)(void) = 
 void exe() {
 
 	(this->*draw_surrounding_object_callback)();
-}
+           }
 
 
 void drawCircle() {
@@ -249,14 +250,16 @@ void drawCircle() {
 
 	drawcircle(550, 125, 45, 2, 0.0f, .0f, 1.0f);
 	drawcircle(150, 150, 45, 2, 0.0f, 1.0f, 1.0f);
-}
+                 }
 
 void drawBox() {
 
 	std::cout << "Draw Box" << std::endl;
 
 	drawrectangle(-10, -10, 1.0f, 0.0f, 0.0f);
-}
+               }
+
+
 
 static GeometricObject_Outer_objects * getpointer(const std::string type_name)
 {
@@ -270,6 +273,9 @@ static GeometricObject_Outer_objects * getpointer(const std::string type_name)
 	return new_ob;
 
 }
+
+
+
 
 };
 
